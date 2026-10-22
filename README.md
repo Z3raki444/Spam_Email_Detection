@@ -70,3 +70,17 @@ The script prints model evaluation metrics, displays the confusion matrix and cl
 - save the trained model and vectorizer
 - expose predictions through a FastAPI endpoint
 - containerize the application with Docker
+
+## Reproducible setup and checks
+
+From the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python main.py
+```
+
+The CSV uses `latin-1` encoding and has the `v1` (ham/spam) and `v2` (message) columns. The [GitHub Actions workflow](.github/workflows/ci.yml) validates this data contract and runs the training/evaluation script in headless mode.
+
+**Evaluation limitations:** This is one random train/test split, not cross-validation or a production deployment. Accuracy alone can be misleading with class imbalance; inspect the precision, recall, F1 and confusion matrix. Messages and labels should not be treated as a representative sample of all current email.
