@@ -2,6 +2,22 @@
 
 A supervised machine-learning project that classifies text messages as **spam** or **ham** using TF-IDF features and a Multinomial Naive Bayes classifier.
 
+[![CI checks](https://github.com/Z3raki444/Spam_Email_Detection/actions/workflows/ci.yml/badge.svg)](https://github.com/Z3raki444/Spam_Email_Detection/actions/workflows/ci.yml)
+
+## Project at a glance
+
+| Stage | Approach |
+| --- | --- |
+| Task | Binary text classification: spam vs. ham |
+| Features | TF-IDF text vectorization |
+| Model | Multinomial Naive Bayes |
+| Evaluation | Train/test split, precision, recall, F1, confusion matrix |
+| Quality | Offline tests and headless training/evaluation in GitHub Actions |
+
+**Start with:** [Training and inference code](main.py) · [Unit tests](tests/) · [Environment requirements](requirements.txt)
+
+> **Limitation:** Results are based on one train/test split of a historical dataset, not cross-validation or a deployed email filter.
+
 ## Project Overview
 
 The workflow covers the core stages of a text-classification pipeline:
